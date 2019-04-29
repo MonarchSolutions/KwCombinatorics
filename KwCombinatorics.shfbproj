@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which
+         assemblies to include from solution and project documentation
+         sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{680eea3a-1fa4-4b33-847d-67490a1d206f}</ProjectGuid>
+    <SHFBSchemaVersion>1.9.5.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
+         Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <OutputPath>.\Doc\</OutputPath>
+    <HtmlHelpName>KwCombinatorics</HtmlHelpName>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="KwCombinatorics\KwCombinatorics.csproj" />
+    </DocumentationSources>
+    <HelpTitle>KwCombinatorics Library</HelpTitle>
+    <Preliminary>False</Preliminary>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="Kw.Combinatorics" isDocumented="True">&lt;para&gt;
+The KwCombinatorics library consists of 4 classes that provide 4 different approaches to generating ordered sequences of numbers. These sequences may be used to permute (rearrange) other lists of objects. Combinatorics are useful for software testing by allowing the generation of various types of possible combinations of input. Other uses include solving mathematical problems, games of chance, and cryptography.
+&lt;/para&gt;
+&lt;para&gt;
+2 key features this library provides are &lt;em&gt;unranking&lt;/em&gt; and &lt;em&gt;ranking&lt;/em&gt; for every combinatoric. Unranking is the ability to quickly retrieve any row in the combinatoric's lexicographically ordered table by setting its &lt;b&gt;Rank&lt;/b&gt; property, or by supplying the rank to a constructor.  Ranking is where an array of integers is supplied to a conbinatoric's constructor giving its place in the ordered table by accessing the &lt;b&gt;Rank&lt;/b&gt; property.
+&lt;/para&gt;
+&lt;para&gt;
+As with the &lt;b&gt;Rank&lt;/b&gt; property, the classes in this library have an identical interface wherever possible so that the techniques used on one class can be applied to the others. Each class makes available a sequence of zero-based integers which represents the current row of its combinatoric. The elements of this row may be accessed using the class's &lt;b&gt;indexer&lt;/b&gt; or default &lt;b&gt;enumerator&lt;/b&gt;. Each class has a &lt;b&gt;GetRows&lt;/b&gt; method for enumerating over a table with the given starting row. Each class has a &lt;b&gt;RowCount&lt;/b&gt; property that returns the range of values of &lt;b&gt;Rank&lt;/b&gt;. All classes except &lt;b&gt;Product&lt;/b&gt; have &lt;b&gt;Choices&lt;/b&gt; and &lt;b&gt;Picks&lt;/b&gt; properties where &lt;b&gt;Picks&lt;/b&gt; is the number of elements in the combinatoric taken from a possible number of &lt;b&gt;Choices&lt;/b&gt;.
+&lt;/para&gt;
+&lt;para&gt;
+The default appearance of a combinatoric row is a list of integers (starting at 0) enclosed in braces. This appearance may be tailored 3 ways:
+&lt;ul&gt;
+  &lt;li&gt;Map each element to a different value using the combinatoric's default enumerator or its indexer.&lt;/li&gt;
+  &lt;li&gt;Use the &lt;b&gt;Permute&lt;/b&gt; method and output the rearranged values.&lt;/li&gt;
+  &lt;li&gt;Define a subclass of the combinatoric and override &lt;b&gt;ToString()&lt;/b&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/para&gt;</NamespaceSummaryItem>
+<NamespaceSummaryItem name="(global)" isDocumented="True" /></NamespaceSummaries>
+    <ProjectSummary>Free to use and share.</ProjectSummary>
+    <FeedbackEMailAddress>Kasewick%40gmail.com</FeedbackEMailAddress>
+    <SyntaxFilters>CSharp</SyntaxFilters>
+    <SdkLinkType>None</SdkLinkType>
+    <HelpFileVersion>1.1.0.0</HelpFileVersion>
+    <FrameworkVersion>.NET Framework 4.0</FrameworkVersion>
+    <PresentationStyle>vs2005</PresentationStyle>
+    <ApiFilter>
+      <Filter entryType="Namespace" fullName="Kw.Combinatorics" isExposed="True" xmlns="">
+        <Filter entryType="Class" fullName="Kw.Combinatorics.Combination" filterName="Combination" isExposed="True">
+          <Filter entryType="Method" fullName="Kw.Combinatorics.Combination.BinomialCoefficient" filterName="BinomialCoefficient" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Kw.Combinatorics.Permutation" filterName="Permutation" isExposed="True">
+          <Filter entryType="Method" fullName="Kw.Combinatorics.Permutation.Factorial" filterName="Factorial" isExposed="False" />
+        </Filter>
+      </Filter>
+      <Filter entryType="Namespace" fullName="System" isExposed="True" xmlns="">
+        <Filter entryType="Class" fullName="System.Object" filterName="Object" isExposed="True">
+          <Filter entryType="Method" fullName="System.Object.Finalize" filterName="Finalize" isExposed="False" />
+        </Filter>
+      </Filter>
+    </ApiFilter>
+  </PropertyGroup>
+  <!-- There are no properties for these two groups but they need to appear in
+       order for Visual Studio to perform the build. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>
